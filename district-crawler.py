@@ -63,5 +63,7 @@ def fetch_all_city_district_infos():
         city_infos.append(city_info)
     return city_infos
 
-info_json = json.dumps(fetch_all_city_district_infos(), ensure_ascii=False)
-print(info_json)
+if __name__ == '__main__':
+    data_json = json.dumps(fetch_all_city_district_infos(), ensure_ascii=False)
+    with open('election-data.json', 'w', encoding='utf-8') as f:
+        f.write(data_json)
